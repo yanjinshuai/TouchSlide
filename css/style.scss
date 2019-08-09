@@ -1,0 +1,126 @@
+@function rem($px) {
+    @return $px / 37.5px * 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: rem(400px);
+    // background: skyblue;
+    animation: lateY 0.5s linear alternate infinite;
+    .body {
+        position: absolute;
+        left: rem(130px);
+        top: rem(300px);
+        transform: translateY(-50%);
+        width: rem(120px);
+        height: rem(140px);
+        z-index: 99;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .lefthand {
+        position: absolute;
+        top: rem(300px);
+        left: rem(71px);
+        width: rem(62px);
+        height: rem(85px);
+        transform-origin: right top;
+        animation: late 0.5s linear alternate infinite;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .righthand {
+        position: absolute;
+        top: rem(170px);
+        left: rem(247px);
+        width: rem(72px);
+        height: rem(145px);
+        transform-origin: left bottom;
+        animation: late 0.5s linear alternate infinite;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .leftfoot {
+        position: absolute;
+        left: rem(123px);
+        top: rem(358px);
+        width: rem(50px);
+        height: rem(10px);
+        transform-origin: right top;
+        animation: leftfootsc 0.5s linear alternate infinite;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .rightfoot {
+        position: absolute;
+        left: rem(212px);
+        top: rem(357px);
+        width: rem(50px);
+        height: rem(10px);
+        transform-origin: left top;
+        animation: rightfootsc 0.5s linear alternate infinite;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@keyframes late {
+    0% {
+        transform: rotate(0deg);
+    }
+    // 50% {
+    //     transform: rotate(10deg);
+    // }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes leftfootsc {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes rightfootsc {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes lateY {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
